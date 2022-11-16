@@ -2,6 +2,7 @@ const router = require("express").Router();
 const admins = require("../controllers/admin.controller");
 
 router.post("/", admins.create);
+
 router.get("/me/", admins.findMe);
 
 router.get("/", admins.findAll);

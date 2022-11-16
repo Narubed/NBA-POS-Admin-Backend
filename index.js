@@ -11,6 +11,8 @@ connection();
 // middlewares
 app.use(express.json());
 app.use(cors());
+// app.use("/uploads", express.static("src"));
+
 // const corsOptions = {
 //     origin: "*",
 //     credentials: true, //access-control-allow-credentials:true

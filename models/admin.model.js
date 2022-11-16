@@ -39,7 +39,7 @@ const validate = (data) => {
     admin_email: Joi.string(),
     admin_password: passwordComplexity(complexityOptions)
       .required()
-      .label("owner_password"),
+      .label("admin_password"),
     admin_date_start: Joi.date().raw().default(Date.now()),
   });
   return schema.validate(data);
