@@ -14,6 +14,7 @@ const BranchSchema = new mongoose.Schema({
   branch_vat_number: { type: String, required: false, default: "ไม่มี" }, // เลขเสียภาษี
   branch_vat_address: { type: String, required: false, default: "ไม่มี" }, // ที่อยู่ตามเอกสารหรือที่อยู่ของสาขา
   branch_withholding_tax: { type: Boolean, required: false, default: false }, // หัก 3% แล้วเเสดงไหม
+  branch_date_end: { type: Date, required: false, default: Date.now() },
 });
 
 BranchSchema.methods.generateAuthToken = function () {
@@ -38,6 +39,7 @@ const validate = (data) => {
     branch_vat_number: Joi.string().default("ไม่มี"),
     branch_vat_address: Joi.string().default("ไม่มี"),
     branch_withholding_tax: Joi.boolean().default(false),
+    branch_date_end: Joi.date().default(Date.now()),
   });
   return schema.validate(data);
 };

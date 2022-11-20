@@ -25,7 +25,6 @@ const OwnerSchema = new mongoose.Schema({
   owner_vat_number: { type: String, required: false, default: "ไม่มี" }, // เลขเสียภาษี
   owner_withholding_tax: { type: Boolean, required: false, default: false }, // หัก 3% แล้วเเสดงไหม
   owner_date_start: { type: Date, required: false, default: Date.now() }, //เริ่ม
-  owner_date_end: { type: Date, required: false, default: Date.now() }, // หมดสัญญา
 });
 
 OwnerSchema.methods.generateAuthToken = function () {
@@ -52,7 +51,6 @@ const validate = (data) => {
     owner_vat_number: Joi.string().default("ไม่มี"),
     owner_withholding_tax: Joi.boolean().default(false),
     owner_date_start: Joi.date().raw().default(Date.now()),
-    owner_date_end: Joi.date().raw().default(Date.now()),
   });
   return schema.validate(data);
 };
