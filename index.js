@@ -27,6 +27,6 @@ app.use(
   require("./routes/images.advert")
 );
 
-const port = process.env.PORT || 9012;
+const port = process.env.PORT || 7010;
 // const server = app.listen(port, console.log(`Listening on port ${port}...`));
 app.listen(port, console.log(`Listening on port ${port}...`));
