@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
     let admin = await Admins.findOne({
       admin_email: req.body.email,
     });
-
+    
     if (!admin) {
       return res.status(401).send({
         message: "อีเมลผิด",
@@ -55,6 +55,7 @@ const validate = (data) => {
   const schema = Joi.object({
     email: Joi.string().required().label("email"),
     password: Joi.string().required().label("password"),
+    date: Joi.string().required().label("date")
   });
   return schema.validate(data);
 };
